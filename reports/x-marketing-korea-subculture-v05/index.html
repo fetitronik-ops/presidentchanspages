@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>한국 X 이용 트렌드와 서브컬처 마케팅 적합성 조사 v0.5</title>
+<title>한국 X 이용 트렌드와 서브컬처 마케팅 적합성 조사</title>
 <style>
 :root {
   color-scheme: light;
@@ -207,6 +207,53 @@ tbody tr:nth-child(even) td { background: #fbfcfe; }
 .score-item.good i { background: #16a34a; }
 .score-item.mid i { background: #64748b; }
 .score-item.caution i { background: #f59e0b; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 18px 0 24px;
+}
+.hero-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+.hero-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #e7ebf1;
+}
+.hero-copy {
+  padding: 12px;
+}
+.hero-copy strong, .hero-copy span {
+  display: block;
+}
+.hero-copy strong {
+  font-size: 15px;
+  color: #243043;
+}
+.hero-copy span {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.hero-copy p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 0;
+}
+.hero-copy b {
+  padding: 4px 7px;
+  border-radius: 6px;
+  background: #f3f6fa;
+  color: #243043;
+  font-size: 12px;
+}
 a { color: var(--accent); }
 @media (max-width: 760px) {
   .chart-head {
@@ -231,6 +278,9 @@ a { color: var(--accent); }
   .role-flow {
     grid-template-columns: 1fr;
   }
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
 }
 @media (max-width: 760px) {
   .report-shell {
@@ -249,7 +299,7 @@ a { color: var(--accent); }
 </head>
 <body>
 <main class="report-shell">
-<h1>한국 X 이용 트렌드와 서브컬처 마케팅 적합성 조사 v0.5</h1>
+<h1>한국 X 이용 트렌드와 서브컬처 마케팅 적합성 조사</h1>
 <p>v0.5 X 캡처 반영판 · 2026-05-17 · BigSubClaw</p>
 <h2>1. 핵심 결론</h2>
 <div class="table-wrap"><table><thead><tr><th>질문</th><th>답</th></tr></thead><tbody>
@@ -335,20 +385,61 @@ a { color: var(--accent); }
 <tr><td>콜라보·음악·캐릭터 중심 콘텐츠가 표본 내 상위권</td><td>X 컷다운도 같은 소재를 우선 활용해야 함</td></tr>
 <tr><td>YouTube 조회수만으로 팬덤 확산을 판단하기 어려움</td><td>X 반응과 커뮤니티 인용 데이터를 함께 봐야 함</td></tr>
 </tbody></table></div>
-<h2>5. YouTube-X 미러 게시물 실측</h2>
+<h2>5. X 동영상 reach 시간 경과와 3개 게시물 실측</h2>
+<section class="hero-grid" aria-label="3개 공식 영상 hero 이미지"><article class="hero-card">
+          <img src="assets/malkuth_youtube_thumb.jpg" alt="블루 아카이브 말쿠트 공식 영상 hero 이미지" loading="lazy">
+          <div class="hero-copy">
+            <strong>블루 아카이브</strong>
+            <span>말쿠트</span>
+            <p><b>YouTube 11,721</b><b>X 34,000</b><b>X/YT 2.90x</b></p>
+          </div>
+        </article><article class="hero-card">
+          <img src="assets/denia_youtube_thumb.jpg" alt="명조 데니아 공식 영상 hero 이미지" loading="lazy">
+          <div class="hero-copy">
+            <strong>명조</strong>
+            <span>데니아</span>
+            <p><b>YouTube 26,194</b><b>X 66,000</b><b>X/YT 2.52x</b></p>
+          </div>
+        </article><article class="hero-card">
+          <img src="assets/be_my_star_youtube_thumb.jpg" alt="니케 BE MY STAR 공식 영상 hero 이미지" loading="lazy">
+          <div class="hero-copy">
+            <strong>니케</strong>
+            <span>BE MY STAR</span>
+            <p><b>YouTube 96,607</b><b>X 24,000</b><b>X/YT 0.25x</b></p>
+          </div>
+        </article></section>
+<h3>5.1 알려진 시간 경과 패턴</h3>
+<div class="table-wrap"><table><thead><tr><th>알려진 사실</th><th>실무 해석</th><th>보고서 적용</th></tr></thead><tbody>
+<tr><td>공개 tweet impression은 평균적으로 게시 후 약 72초 지점에서 초당 impression 피크에 도달</td><td>첫 수분의 초기 반응 속도가 배포 폭을 크게 좌우</td><td>업로드 직후 15분/1시간 캡처를 별도 보관</td></tr>
+<tr><td>tweet impression의 중앙 half-life는 약 80분</td><td>일반 organic 게시물은 1~2시간 안에 1차 확산력이 크게 결정</td><td>1시간 reach와 6시간 reach를 early velocity 지표로 사용</td></tr>
+<tr><td>약 95%의 tweet은 24시간 뒤 유의미한 신규 impression이 거의 없음</td><td>24시간 수치는 대다수 organic 게시물의 1차 성과 판단점</td><td>24h 스냅샷을 캠페인 비교 기준으로 고정</td></tr>
+<tr><td>Brandwatch 기준 X 콘텐츠 지표는 게시 15분 후 첫 refresh, 이후 30일간 최소 일 1회 refresh</td><td>단일 시점 캡처만으로는 초반 기울기와 long-tail을 분리하기 어려움</td><td>15m/1h/6h/24h/72h/7d/30d 캡처 템플릿 필요</td></tr>
+</tbody></table></div>
+<p>주의: 위 연구는 X/Twitter 게시물 impression 일반 패턴이다. X video view 정의와 완전히 같지는 않으므로, 여기서는 “동영상 reach가 시간에 따라 어떻게 누적/감쇠되는가”를 판단하는 보조 프레임으로 사용한다.</p>
+<h3>5.2 실무 캡처 타임라인</h3>
+<div class="table-wrap"><table><thead><tr><th>시점</th><th>볼 지표</th><th>판단 질문</th></tr></thead><tbody>
+<tr><td>T+15m</td><td>view/reach, reply, repost, like</td><td>게시 정상 노출 여부와 초기 팬덤 반응 확인</td></tr>
+<tr><td>T+1h</td><td>view/reach 증가폭, repost 속도</td><td>early velocity가 평시 대비 높은가</td></tr>
+<tr><td>T+6h</td><td>view/reach, quote, 커뮤니티 인용</td><td>1차 확산이 팬덤 외부로 넘어가는가</td></tr>
+<tr><td>T+24h</td><td>view/reach, 참여율, YouTube 조회수 비교</td><td>organic 1차 성과 기준선으로 삼을 수 있는가</td></tr>
+<tr><td>T+72h</td><td>추가 repost/quote, 커뮤니티 인기글</td><td>2차 확산이나 밈화가 발생했는가</td></tr>
+<tr><td>T+7d</td><td>YouTube-X-커뮤니티 합산 성과</td><td>캠페인 단위 성과 비교에 쓸 수 있는가</td></tr>
+<tr><td>T+30d</td><td>lifetime view/reach, link click/UTM</td><td>archive 성과와 유료 집행 학습치로 남길 수 있는가</td></tr>
+</tbody></table></div>
+<h3>5.3 3개 공식 X 게시물 실측</h3>
 <p>사용자 제공 X 캡처 3건을 기준으로 공식 X 게시물의 공개 view와 참여 지표를 반영했다. X view는 YouTube 조회수와 정의가 다르므로 “영상 시청 수”가 아니라 게시물 도달/노출성 지표로 해석한다.</p>
 <div class="table-wrap"><table><thead><tr><th>타이틀</th><th>YouTube 대표 영상</th><th>공식 X 계정</th><th>X 게시 시각</th><th>X view/reach</th><th>replies</th><th>reposts</th><th>likes</th><th>bookmarks</th></tr></thead><tbody>
 <tr><td>블루 아카이브</td><td>제가 증거할 저의 이름은, 말쿠트.</td><td>@KR_BlueArchive</td><td>2026-05-16 12:00</td><td>34,000</td><td>2</td><td>293</td><td>909</td><td>124</td></tr>
 <tr><td>명조</td><td>공명자 전투 모션 - 데니아</td><td>@WW_KR_Official</td><td>2026-05-17 12:00</td><td>66,000</td><td>1</td><td>312</td><td>669</td><td>36</td></tr>
 <tr><td>니케</td><td>BE MY STAR Stage Full Ver.</td><td>@NIKKE_kr</td><td>2026-05-04 12:00</td><td>24,000</td><td>2</td><td>178</td><td>685</td><td>73</td></tr>
 </tbody></table></div>
-<h3>5.1 YouTube-X 비교</h3>
+<h3>5.4 YouTube-X 비교</h3>
 <div class="table-wrap"><table><thead><tr><th>타이틀</th><th>YouTube 조회수</th><th>X view/reach</th><th>X/YouTube 비율</th><th>X 참여 합계</th><th>X 참여율</th></tr></thead><tbody>
 <tr><td>블루 아카이브</td><td>11,721</td><td>34,000</td><td>2.90x</td><td>1,328</td><td>3.91%</td></tr>
 <tr><td>명조</td><td>26,194</td><td>66,000</td><td>2.52x</td><td>1,018</td><td>1.54%</td></tr>
 <tr><td>니케</td><td>96,607</td><td>24,000</td><td>0.25x</td><td>938</td><td>3.91%</td></tr>
 </tbody></table></div>
-<h3>5.2 해석</h3>
+<h3>5.5 해석</h3>
 <div class="table-wrap"><table><thead><tr><th>관찰</th><th>판단</th></tr></thead><tbody>
 <tr><td>블루 아카이브와 명조는 X view가 YouTube 조회수보다 약 2.5~2.9배 큼</td><td>X가 공식 영상의 초기 도달/공지 확산 레이어로 작동한 사례</td></tr>
 <tr><td>니케는 YouTube 조회수가 X view보다 약 4배 큼</td><td>음악·스테이지형 콘텐츠는 YouTube 소비가 더 강하게 작동한 사례</td></tr>
@@ -380,18 +471,7 @@ a { color: var(--accent); }
 <tr><td>유료 집행</td><td>X 단독 대규모 집행은 보류. 게시물 부스팅·리타게팅·소액 테스트부터</td></tr>
 <tr><td>리포팅</td><td>YouTube, X, 커뮤니티를 한 캠페인 단위로 묶어 비교</td></tr>
 </tbody></table></div>
-<h2>9. 증액/축소 조건</h2>
-<div class="table-wrap"><table><thead><tr><th>판단</th><th>조건</th></tr></thead><tbody>
-<tr><td>증액</td><td>공개 후 24~72시간 내 X repost/quote가 평시 대비 상승</td></tr>
-<tr><td>증액</td><td>X 게시물이 커뮤니티 인기글·공지·밈 게시글로 재확산</td></tr>
-<tr><td>증액</td><td>X 링크 클릭/UTM이 YouTube 조회, 이벤트 참여, 사전예약에 기여</td></tr>
-<tr><td>증액</td><td>팬아트·해시태그 UGC가 반복적으로 발생</td></tr>
-<tr><td>축소</td><td>view만 높고 repost/quote/reply가 낮음</td></tr>
-<tr><td>축소</td><td>X 게시물이 커뮤니티로 거의 재공유되지 않음</td></tr>
-<tr><td>축소</td><td>X용 네이티브 소재 없이 YouTube 링크만 반복</td></tr>
-<tr><td>축소</td><td>운영 승인 속도가 느려 실시간 반응을 놓침</td></tr>
-</tbody></table></div>
-<h2>10. 추가 조사 체크리스트</h2>
+<h2>9. 추가 조사 체크리스트</h2>
 <div class="table-wrap"><table><thead><tr><th>우선순위</th><th>항목</th><th>필요성</th></tr></thead><tbody>
 <tr><td>1</td><td>quote 수와 게시물 URL 원문 추가 확보</td><td>공개 캡처에서 quote 수는 미확인</td></tr>
 <tr><td>1</td><td>X 관리자 impression/link click/UTM 확보</td><td>reach와 전환 기여도 비교</td></tr>
@@ -400,7 +480,7 @@ a { color: var(--accent); }
 <tr><td>2</td><td>24h/72h/7d 변화 추적</td><td>캠페인 초기 반응과 지속성 분리</td></tr>
 <tr><td>3</td><td>UTM/link click 또는 관리자 impression 확보</td><td>유료 집행 판단 근거</td></tr>
 </tbody></table></div>
-<h2>11. 결론</h2>
+<h2>10. 결론</h2>
 <div class="table-wrap"><table><thead><tr><th>최종 판단</th><th>내용</th></tr></thead><tbody>
 <tr><td>X의 위치</td><td>대중 영상 플랫폼이 아니라 코어 팬덤 증폭 레이어</td></tr>
 <tr><td>YouTube의 위치</td><td>공식 영상 허브와 장기 검색·추천 본진</td></tr>
@@ -409,7 +489,7 @@ a { color: var(--accent); }
 <tr><td>보류할 것</td><td>X 단독 대규모 유료 집행</td></tr>
 <tr><td>바로 할 것</td><td>X용 컷다운 소재, 공식 리액션 기준, YouTube-X-커뮤니티 통합 리포트 템플릿 구축</td></tr>
 </tbody></table></div>
-<h2>12. 참고 출처</h2>
+<h2>11. 참고 출처</h2>
 <ul>
 <li>DataReportal, Digital 2022: South Korea: https://datareportal.com/reports/digital-2022-south-korea</li>
 <li>DataReportal, Digital 2023: South Korea: https://datareportal.com/reports/digital-2023-south-korea</li>
@@ -419,6 +499,9 @@ a { color: var(--accent); }
 <li>Gallup Korea, 마켓70 2023: https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1430</li>
 <li>Gallup Korea, 마켓70 2022: https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1323</li>
 <li>Google YouTube Help, How engagement metrics are counted: https://support.google.com/youtube/answer/2991785</li>
+<li>Johannes Pfeffer, Denny Matter, Andranik Sargsyan, The Half-Life of a Tweet, ICWSM 2023: https://doi.org/10.1609/icwsm.v17i1.22228</li>
+<li>arXiv, The Half-Life of a Tweet: https://arxiv.org/abs/2302.09654</li>
+<li>Brandwatch, X/Twitter content metrics in Measure: https://social-media-management-help.brandwatch.com/en/articles/12767951-x-twitter-content-metrics-in-measure</li>
 <li>Byline Network, X Korea mMAU/mDAU comments from MGS 2024: https://byline.network/2024/08/1-1261/</li>
 <li>Arca Blue Archive, 트위터 디지털 굿즈 인증샷 이벤트: https://arca.live/b/bluearchive/73857557</li>
 <li>Arca Wuthering Waves, 공식 트위터 일람: https://arca.live/b/wutheringwaves/72210303</li>
