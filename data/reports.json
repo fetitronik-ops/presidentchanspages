@@ -6,5 +6,21 @@
     "category": "버즈 분석",
     "summary": "아카라이브, 디시, 루리웹, 게임웹진, YouTube, X/검색 노출을 확장 비교한 국내 버즈량 리포트입니다.",
     "url": "reports/azur-promilia-vs-project-rx/"
+  },
+  {
+    "slug": "blue-archive-kr-ost-demand",
+    "title": "블루 아카이브 OST 한국어 버전 인게임 탑재 수요 조사",
+    "date": "2026-05-16",
+    "category": "수요 조사",
+    "summary": "커뮤니티와 YouTube 반응을 바탕으로 블루 아카이브 한국어 OST의 인게임 탑재 수요를 정리한 리포트입니다.",
+    "url": "reports/blue-archive-kr-ost-demand/"
+  },
+  {
+    "slug": "gf2-global-korea-marketing-report",
+    "title": "Girls' Frontline 2: Exilium 글로벌·한국 마케팅 활동 보고서",
+    "date": "2026-05-09",
+    "category": "마케팅 활동 보고서",
+    "summary": "소녀전선2 글로벌·한국 마케팅 활동과 공식 채널 운영, 영상/썸네일 사례를 정리한 리포트입니다.",
+    "url": "reports/gf2-global-korea-marketing-report/"
   }
 ]
