@@ -87,6 +87,8 @@ th, td {
   border-right: 1px solid var(--line-soft);
   border-bottom: 1px solid var(--line-soft);
   vertical-align: top;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
 }
 th:last-child, td:last-child { border-right: 0; }
 tr:last-child td { border-bottom: 0; }
@@ -296,8 +298,37 @@ a { color: var(--accent); }
   }
   h1 { font-size: 26px; }
   h2 { font-size: 20px; }
-  table { min-width: 680px; font-size: 13px; }
-  th, td { padding: 9px 10px; }
+  table {
+    min-width: 680px;
+    font-size: 13px;
+  }
+  .table-wrap.compact-table table {
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .table-wrap.compact-table th,
+  .table-wrap.compact-table td {
+    white-space: normal;
+  }
+  .table-wrap.cols-2 th:first-child,
+  .table-wrap.cols-2 td:first-child {
+    width: 34%;
+  }
+  .table-wrap.cols-2 th:last-child,
+  .table-wrap.cols-2 td:last-child {
+    width: 66%;
+  }
+  .table-wrap.cols-3 th,
+  .table-wrap.cols-3 td {
+    width: 33.333%;
+  }
+  th, td {
+    padding: 9px 10px;
+  }
+  td:nth-child(n+3):not(:last-child) {
+    white-space: normal;
+  }
 }
 </style>
 </head>
@@ -306,7 +337,7 @@ a { color: var(--accent); }
 <h1>한국 X 이용 트렌드와 서브컬처 마케팅 적합성 조사</h1>
 <p>v0.6 X 네이티브 영상 실측 반영판 · 2026-05-17 · BigSubClaw</p>
 <h2>1. 핵심 결론</h2>
-<div class="table-wrap"><table><thead><tr><th>질문</th><th>답</th></tr></thead><tbody>
+<div class="table-wrap cols-2 compact-table"><table><thead><tr><th>질문</th><th>답</th></tr></thead><tbody>
 <tr><td>X를 한국 대중 도달 플랫폼으로 봐야 하는가</td><td>아니오. YouTube 대비 도달 규모가 작고 Gallup 이용률도 정체권이다.</td></tr>
 <tr><td>X를 서브컬처 팬덤 운영 채널로 봐야 하는가</td><td>예. 공식 정보, 팬아트, 실시간 반응, 커뮤니티 재확산이 연결된다.</td></tr>
 <tr><td>지금 X 유료 매체비를 크게 늘릴 근거가 있는가</td><td>대규모 집행은 아직 보수적이다. 다만 X 네이티브 세로 영상은 운영/소액 부스팅 테스트 근거가 생겼다.</td></tr>
@@ -346,20 +377,20 @@ a { color: var(--accent); }
         </div></div>
     </section>
 <h3>2.1 DataReportal 기준 X 광고 도달 추이</h3>
-<div class="table-wrap"><table><thead><tr><th>연도</th><th>플랫폼 표기</th><th>한국 X/Twitter 광고 도달</th><th>인구 대비</th><th>전년 대비</th><th>해석</th></tr></thead><tbody>
+<div class="table-wrap cols-6"><table><thead><tr><th>연도</th><th>플랫폼 표기</th><th>한국 X/Twitter 광고 도달</th><th>인구 대비</th><th>전년 대비</th><th>해석</th></tr></thead><tbody>
 <tr><td>2022</td><td>Twitter</td><td>720만</td><td>14.0%</td><td>-</td><td>낮은 대중 침투율</td></tr>
 <tr><td>2023</td><td>Twitter</td><td>980만</td><td>18.9%</td><td>+36.1%</td><td>광고 도달 기준 반등</td></tr>
 <tr><td>2024</td><td>X</td><td>1,040만</td><td>20.1%</td><td>+6.1%</td><td>1,000만 전후로 확장</td></tr>
 <tr><td>2025</td><td>X</td><td>1,000만</td><td>19.4%</td><td>-3.8%</td><td>고성장보다는 정체권</td></tr>
 </tbody></table></div>
 <h3>2.2 Gallup 기준 X 이용률 추이</h3>
-<div class="table-wrap"><table><thead><tr><th>연도</th><th>연간 이용률</th><th>월간 이용률</th><th>비교 포인트</th></tr></thead><tbody>
+<div class="table-wrap cols-4"><table><thead><tr><th>연도</th><th>연간 이용률</th><th>월간 이용률</th><th>비교 포인트</th></tr></thead><tbody>
 <tr><td>2022</td><td>15%</td><td>5%</td><td>선택적 SNS 성격</td></tr>
 <tr><td>2023</td><td>15%</td><td>미확인</td><td>전년과 유사</td></tr>
 <tr><td>2025</td><td>14%</td><td>4%</td><td>월간 활성층은 좁음</td></tr>
 </tbody></table></div>
 <h3>2.3 추세 판단</h3>
-<div class="table-wrap"><table><thead><tr><th>관찰</th><th>판단</th></tr></thead><tbody>
+<div class="table-wrap cols-2 compact-table"><table><thead><tr><th>관찰</th><th>판단</th></tr></thead><tbody>
 <tr><td>DataReportal 광고 도달은 2022년 720만에서 2024년 1,040만까지 증가 후 2025년 1,000만 수준</td><td>광고 타깃 풀은 1,000만 전후에서 움직이는 정체권으로 해석</td></tr>
 <tr><td>Gallup 연간 이용률은 2022~2025년 14~15% 수준</td><td>대중 플랫폼으로 폭발 성장 중이라고 보기 어려움</td></tr>
 <tr><td>Gallup 월간 이용률은 2022년 5%, 2025년 4%</td><td>일상 고빈도 이용자층은 제한적</td></tr>
@@ -367,7 +398,7 @@ a { color: var(--accent); }
 </tbody></table></div>
 <h2>3. 플랫폼 역할 매트릭스</h2>
 <section class="chart-card role-flow" aria-label="채널 역할 모델"><div class="role-card primary"><strong>YouTube</strong><span>영상 허브</span><small>검색·추천·장기 조회</small></div><div class="role-card accent"><strong>X</strong><span>팬덤 증폭</span><small>초기 반응·repost·quote</small></div><div class="role-card support"><strong>커뮤니티</strong><span>확산 검증</span><small>게시글·댓글·인기글</small></div></section>
-<div class="table-wrap"><table><thead><tr><th>역할</th><th>YouTube</th><th>X</th><th>커뮤니티</th></tr></thead><tbody>
+<div class="table-wrap cols-4"><table><thead><tr><th>역할</th><th>YouTube</th><th>X</th><th>커뮤니티</th></tr></thead><tbody>
 <tr><td>공식 영상 보관</td><td>높음</td><td>낮음</td><td>낮음</td></tr>
 <tr><td>검색·추천 누적</td><td>높음</td><td>낮음~중간</td><td>중간</td></tr>
 <tr><td>공개 직후 반응</td><td>중간</td><td>높음</td><td>높음</td></tr>
@@ -378,13 +409,13 @@ a { color: var(--accent); }
 <h2>4. 3개 타이틀 YouTube 표본</h2>
 <section class="chart-card" aria-label="공식 YouTube 최근 영상 표본 비교"><div class="chart-head"><h3>최근 8개 영상 평균 조회수</h3><p>공식 KR YouTube 채널 표본 기준</p></div><div class="bar-chart"><div class="bar-row"><b>블루 아카이브</b><div class="bar-track"><span style="width:47%;background:#3b82f6"></span></div><em>17,930</em></div><div class="bar-row"><b>명조</b><div class="bar-track"><span style="width:100%;background:#16a34a"></span></div><em>38,232</em></div><div class="bar-row"><b>니케</b><div class="bar-track"><span style="width:83%;background:#f59e0b"></span></div><em>31,714</em></div></div></section>
 <p>최근 8개 공식 KR YouTube 영상 표본 기준이다. 표본 크기가 작으므로 채널 전체 성과가 아니라 최근 운영 신호로 해석한다.</p>
-<div class="table-wrap"><table><thead><tr><th>타이틀</th><th>구독자</th><th>평균 조회수</th><th>중앙값</th><th>최고 영상</th><th>최고 조회수</th></tr></thead><tbody>
+<div class="table-wrap cols-6"><table><thead><tr><th>타이틀</th><th>구독자</th><th>평균 조회수</th><th>중앙값</th><th>최고 영상</th><th>최고 조회수</th></tr></thead><tbody>
 <tr><td>블루 아카이브 KR</td><td>237,000</td><td>17,930</td><td>13,958</td><td>붉은겨울 OST 리믹스 앨범 플레이리스트</td><td>35,989</td></tr>
 <tr><td>명조 KR</td><td>123,000</td><td>38,232</td><td>26,571</td><td>사이버펑크: 엣지러너 콜라보 예고</td><td>157,870</td></tr>
 <tr><td>니케 KR</td><td>83,500</td><td>31,714</td><td>23,502</td><td>BE MY STAR Stage Full Ver.</td><td>96,607</td></tr>
 </tbody></table></div>
 <h3>4.1 표본 해석</h3>
-<div class="table-wrap"><table><thead><tr><th>관찰</th><th>실무 의미</th></tr></thead><tbody>
+<div class="table-wrap cols-2 compact-table"><table><thead><tr><th>관찰</th><th>실무 의미</th></tr></thead><tbody>
 <tr><td>구독자 수와 최근 평균 조회수 순위가 일치하지 않음</td><td>소재 강도와 공개 타이밍이 성과를 크게 좌우</td></tr>
 <tr><td>콜라보·음악·캐릭터 중심 콘텐츠가 표본 내 상위권</td><td>X 컷다운도 같은 소재를 우선 활용해야 함</td></tr>
 <tr><td>YouTube 조회수만으로 팬덤 확산을 판단하기 어려움</td><td>X 반응과 커뮤니티 인용 데이터를 함께 봐야 함</td></tr>
@@ -413,7 +444,7 @@ a { color: var(--accent); }
           </div>
         </article></section><section class="chart-card" aria-label="블루 아카이브 X YouTube 배율"><div class="chart-head"><h3>블루 아카이브 X/YT 배율 상위</h3><p>사용자 제공 X 캡처 8건과 YouTube 조회수 역매칭</p></div><div class="bar-chart ratio-chart"><div class="bar-row"><b>레이사 매지컬</b><div class="bar-track"><span style="width:100%;background:#ef4444"></span></div><em>32.04x</em></div><div class="bar-row"><b>하나에 생일</b><div class="bar-track"><span style="width:35%;background:#f59e0b"></span></div><em>11.34x</em></div><div class="bar-row"><b>자, 부끄러운 표정</b><div class="bar-track"><span style="width:12%;background:#3b82f6"></span></div><em>3.99x</em></div><div class="bar-row"><b>스즈미 매지컬</b><div class="bar-track"><span style="width:8%;background:#16a34a"></span></div><em>2.58x</em></div><div class="bar-row"><b>Someday 링크</b><div class="bar-track"><span style="width:6%;background:#64748b"></span></div><em>1.96x</em></div></div></section><section class="chart-card" aria-label="소재 유형별 X reach 환산 계수"><div class="chart-head"><h3>소재 유형별 X/YT 환산 계수</h3><p>세로형 평균은 레이사 outlier 영향이 커서 중앙값을 보수 기준으로 사용</p></div><div class="bar-chart ratio-chart"><div class="bar-row"><b>가로 링크형 평균</b><div class="bar-track"><span style="width:27%;background:#64748b"></span></div><em>2.42x</em></div><div class="bar-row"><b>세로 직접 업로드 중앙값</b><div class="bar-track"><span style="width:37%;background:#16a34a"></span></div><em>3.29x</em></div><div class="bar-row"><b>세로 직접 업로드 평균</b><div class="bar-track"><span style="width:100%;background:#ef4444"></span></div><em>8.93x</em></div></div></section>
 <h3>5.1 알려진 시간 경과 패턴</h3>
-<div class="table-wrap"><table><thead><tr><th>알려진 사실</th><th>실무 해석</th><th>보고서 적용</th></tr></thead><tbody>
+<div class="table-wrap cols-3 compact-table"><table><thead><tr><th>알려진 사실</th><th>실무 해석</th><th>보고서 적용</th></tr></thead><tbody>
 <tr><td>공개 tweet impression은 평균적으로 게시 후 약 72초 지점에서 초당 impression 피크에 도달</td><td>첫 수분의 초기 반응 속도가 배포 폭을 크게 좌우</td><td>업로드 직후 15분/1시간 캡처를 별도 보관</td></tr>
 <tr><td>tweet impression의 중앙 half-life는 약 80분</td><td>일반 organic 게시물은 1~2시간 안에 1차 확산력이 크게 결정</td><td>1시간 reach와 6시간 reach를 early velocity 지표로 사용</td></tr>
 <tr><td>약 95%의 tweet은 24시간 뒤 유의미한 신규 impression이 거의 없음</td><td>24시간 수치는 대다수 organic 게시물의 1차 성과 판단점</td><td>24h 스냅샷을 캠페인 비교 기준으로 고정</td></tr>
@@ -421,7 +452,7 @@ a { color: var(--accent); }
 </tbody></table></div>
 <p>주의: 위 연구는 X/Twitter 게시물 impression 일반 패턴이다. X video view 정의와 완전히 같지는 않으므로, 여기서는 “동영상 reach가 시간에 따라 어떻게 누적/감쇠되는가”를 판단하는 보조 프레임으로 사용한다.</p>
 <h3>5.2 실무 캡처 타임라인</h3>
-<div class="table-wrap"><table><thead><tr><th>시점</th><th>볼 지표</th><th>판단 질문</th></tr></thead><tbody>
+<div class="table-wrap cols-3 compact-table"><table><thead><tr><th>시점</th><th>볼 지표</th><th>판단 질문</th></tr></thead><tbody>
 <tr><td>T+15m</td><td>view/reach, reply, repost, like</td><td>게시 정상 노출 여부와 초기 팬덤 반응 확인</td></tr>
 <tr><td>T+1h</td><td>view/reach 증가폭, repost 속도</td><td>early velocity가 평시 대비 높은가</td></tr>
 <tr><td>T+6h</td><td>view/reach, quote, 커뮤니티 인용</td><td>1차 확산이 팬덤 외부로 넘어가는가</td></tr>
@@ -432,7 +463,7 @@ a { color: var(--accent); }
 </tbody></table></div>
 <h3>5.3 블루 아카이브 X-YouTube 역매칭 8건</h3>
 <p>사용자 제공 블루 아카이브 X 캡처 8건을 기준으로 X 게시물과 대응 YouTube 영상을 역매칭했다. 가로형은 YouTube 링크 게시물, 세로형은 X 직접 업로드 게시물로 분리했다.</p>
-<div class="table-wrap"><table><thead><tr><th>#</th><th>X 소재</th><th>유형</th><th>X view/reach</th><th>매칭 YouTube 영상</th><th>YouTube 조회수</th><th>X/YT 배율</th><th>매칭 신뢰도</th></tr></thead><tbody>
+<div class="table-wrap cols-8"><table><thead><tr><th>#</th><th>X 소재</th><th>유형</th><th>X view/reach</th><th>매칭 YouTube 영상</th><th>YouTube 조회수</th><th>X/YT 배율</th><th>매칭 신뢰도</th></tr></thead><tbody>
 <tr><td>1</td><td>자, 부끄러운 표정으로.</td><td>세로/X 직접 업로드</td><td>200,000</td><td>자, 부끄러운 표정으로.</td><td>50,122</td><td>3.99x</td><td>높음</td></tr>
 <tr><td>2</td><td>하나에 생일</td><td>세로/X 직접 업로드</td><td>52,000</td><td>생일 축하해요~ 하나에!</td><td>4,586</td><td>11.34x</td><td>높음</td></tr>
 <tr><td>3</td><td>하루카 생일</td><td>세로/X 직접 업로드</td><td>23,000</td><td>생일 축하해요~ 하루카!</td><td>13,302</td><td>1.73x</td><td>높음</td></tr>
@@ -443,7 +474,7 @@ a { color: var(--accent); }
 <tr><td>8</td><td>스즈미 매지컬</td><td>세로/X 직접 업로드</td><td>57,000</td><td>학생 살펴보기: 스즈미(매지컬)</td><td>22,095</td><td>2.58x</td><td>중상</td></tr>
 </tbody></table></div>
 <h3>5.4 공개 참여율</h3>
-<div class="table-wrap"><table><thead><tr><th>#</th><th>replies</th><th>reposts</th><th>likes</th><th>bookmarks</th><th>공개 참여 합계</th><th>X 공개 참여율</th></tr></thead><tbody>
+<div class="table-wrap cols-7"><table><thead><tr><th>#</th><th>replies</th><th>reposts</th><th>likes</th><th>bookmarks</th><th>공개 참여 합계</th><th>X 공개 참여율</th></tr></thead><tbody>
 <tr><td>1</td><td>21</td><td>1,460</td><td>5,233</td><td>954</td><td>7,668</td><td>3.83%</td></tr>
 <tr><td>2</td><td>1</td><td>128</td><td>486</td><td>미확인</td><td>615</td><td>1.18%</td></tr>
 <tr><td>3</td><td>3</td><td>294</td><td>1,006</td><td>미확인</td><td>1,303</td><td>5.67%</td></tr>
@@ -454,20 +485,20 @@ a { color: var(--accent); }
 <tr><td>8</td><td>13</td><td>771</td><td>2,714</td><td>645</td><td>4,143</td><td>7.27%</td></tr>
 </tbody></table></div>
 <h3>5.5 소재 유형별 비교</h3>
-<div class="table-wrap"><table><thead><tr><th>유형</th><th>표본</th><th>X/YT 평균</th><th>X/YT 중앙값</th><th>범위</th><th>해석</th></tr></thead><tbody>
+<div class="table-wrap cols-6"><table><thead><tr><th>유형</th><th>표본</th><th>X/YT 평균</th><th>X/YT 중앙값</th><th>범위</th><th>해석</th></tr></thead><tbody>
 <tr><td>세로/X 직접 업로드</td><td>6</td><td>8.93x</td><td>3.29x</td><td>1.73x~32.04x</td><td>평균은 레이사 32.04x의 영향을 크게 받음. 실무 기준값은 중앙값 3.29x와 outlier 제외 평균 4.31x를 함께 보는 편이 안전</td></tr>
 <tr><td>가로/YouTube 링크</td><td>2</td><td>2.42x</td><td>2.42x</td><td>1.96x~2.88x</td><td>링크형도 YouTube 조회수 대비 약 2배 이상 reach가 나올 수 있으나 폭발성은 제한적</td></tr>
 <tr><td>전체</td><td>8</td><td>7.30x</td><td>2.73x</td><td>1.73x~32.04x</td><td>X는 영상 보관소가 아니라 팬덤 타임라인에서 발견·재전달되는 숏폼 채널로 봐야 함</td></tr>
 </tbody></table></div>
 <h3>5.6 YouTube 조회수별 X reach 환산</h3>
 <p>아래 표는 “동일 또는 유사 소재를 X에 미러링했을 때 어느 정도 reach를 기대할 수 있는가”를 보기 위한 단순 환산이다. 세로/X 직접 업로드형은 평균 8.93x가 outlier 영향을 크게 받으므로, 보수 기준은 중앙값 3.29x를 우선 사용한다.</p>
-<div class="table-wrap"><table><thead><tr><th>YouTube 조회수</th><th>가로/YouTube 링크형 평균 2.42x</th><th>세로/X 직접 업로드 중앙값 3.29x</th><th>세로/X 직접 업로드 평균 8.93x</th></tr></thead><tbody>
+<div class="table-wrap cols-4"><table><thead><tr><th>YouTube 조회수</th><th>가로/YouTube 링크형 평균 2.42x</th><th>세로/X 직접 업로드 중앙값 3.29x</th><th>세로/X 직접 업로드 평균 8.93x</th></tr></thead><tbody>
 <tr><td>10,000</td><td>24,200</td><td>32,900</td><td>89,300</td></tr>
 <tr><td>20,000</td><td>48,400</td><td>65,800</td><td>178,600</td></tr>
 <tr><td>50,000</td><td>121,000</td><td>164,500</td><td>446,500</td></tr>
 <tr><td>100,000</td><td>242,000</td><td>329,000</td><td>893,000</td></tr>
 </tbody></table></div>
-<div class="table-wrap"><table><thead><tr><th>적용 기준</th><th>권장 사용</th></tr></thead><tbody>
+<div class="table-wrap cols-2 compact-table"><table><thead><tr><th>적용 기준</th><th>권장 사용</th></tr></thead><tbody>
 <tr><td>보수 추정</td><td>가로 링크형 2.42x, 세로 직접 업로드형 3.29x</td></tr>
 <tr><td>운영 목표</td><td>세로 직접 업로드형 4x 전후를 1차 목표로 설정</td></tr>
 <tr><td>상방 사례</td><td>레이사 매지컬처럼 캐릭터/대사/타이밍이 맞으면 30x 이상도 가능</td></tr>
@@ -475,13 +506,13 @@ a { color: var(--accent); }
 </tbody></table></div>
 <h3>5.7 링크 클릭률과 시청 품질 지표</h3>
 <p>X 공개 게시물에서 보이는 view/reach는 링크 클릭률이나 평균 시청시간을 직접 보여주지 않는다. 따라서 공개 리포트에서는 “알려진 광고 benchmark”와 “공식 게임 계정 organic 게시물에서 확인 가능한 범위”를 분리해야 한다.</p>
-<div class="table-wrap"><table><thead><tr><th>지표</th><th>알려진 공개 정보</th><th>이번 리포트 적용</th></tr></thead><tbody>
+<div class="table-wrap cols-3 compact-table"><table><thead><tr><th>지표</th><th>알려진 공개 정보</th><th>이번 리포트 적용</th></tr></thead><tbody>
 <tr><td>X 광고 CTR</td><td>공개 benchmark는 대체로 약 0.86%~2% 범위로 언급된다. 일부 자료는 promoted post 평균 CTR 0.86%, 일반 X 광고 CTR 1~2% 수준을 제시한다.</td><td>paid/boosted 소재의 참고 하한선으로만 사용</td></tr>
 <tr><td>게임 공식 계정 organic 링크 클릭률</td><td>공신력 있는 공개 평균 benchmark는 확인하기 어렵다. X 공개 UI에도 link click은 표시되지 않는다.</td><td>관리자 analytics, UTM, shortlink 로그 없이는 계산 불가</td></tr>
 <tr><td>YouTube 링크형 게시물의 공개 대체 지표</td><td>공개 UI에서는 view/reach, repost, reply, like, bookmark 정도만 확인 가능하다.</td><td>link click 대신 X/YT 배율과 repost/bookmark 밀도를 보조 지표로 사용</td></tr>
 <tr><td>X 직접 업로드형 시청 품질</td><td>평균 시청시간, 25/50/75/100% completion rate는 공개 게시물 캡처로 확인 불가</td><td>X analytics 또는 Brandwatch/Sprinklr 등 측정 도구 필요</td></tr>
 </tbody></table></div>
-<div class="table-wrap"><table><thead><tr><th>운영 질문</th><th>현재 답</th></tr></thead><tbody>
+<div class="table-wrap cols-2 compact-table"><table><thead><tr><th>운영 질문</th><th>현재 답</th></tr></thead><tbody>
 <tr><td>X에 YouTube 링크를 올리면 클릭률이 몇 %인가</td><td>공개 데이터만으로는 알 수 없다. 광고 benchmark 0.86~2%는 paid 참고치일 뿐 organic 공식 계정에 직접 적용하면 위험하다.</td></tr>
 <tr><td>X view가 높으면 YouTube 유입도 높다고 볼 수 있는가</td><td>아니다. X view는 타임라인 도달/노출성 지표이고, YouTube 유입은 link click/UTM으로 별도 확인해야 한다.</td></tr>
 <tr><td>이번 데이터로 볼 수 있는 것</td><td>X에 미러링했을 때 YouTube 조회수 대비 몇 배의 공개 reach가 발생하는지, 그리고 repost/bookmark 등 팬덤 반응 밀도</td></tr>
@@ -489,19 +520,19 @@ a { color: var(--accent); }
 </tbody></table></div>
 <h3>5.8 3개 타이틀 공식 X 게시물 실측</h3>
 <p>사용자 제공 X 캡처 3건과 블루 아카이브 추가 캡처를 기준으로 공식 X 게시물의 공개 view와 참여 지표를 반영했다. X view는 YouTube 조회수와 정의가 다르므로 “영상 시청 수”가 아니라 게시물 도달/노출성 지표로 해석한다.</p>
-<div class="table-wrap"><table><thead><tr><th>타이틀</th><th>YouTube 대표 영상</th><th>공식 X 계정</th><th>X 게시 시각</th><th>X view/reach</th><th>replies</th><th>reposts</th><th>likes</th><th>bookmarks</th></tr></thead><tbody>
+<div class="table-wrap cols-9"><table><thead><tr><th>타이틀</th><th>YouTube 대표 영상</th><th>공식 X 계정</th><th>X 게시 시각</th><th>X view/reach</th><th>replies</th><th>reposts</th><th>likes</th><th>bookmarks</th></tr></thead><tbody>
 <tr><td>블루 아카이브</td><td>제가 증거할 저의 이름은, 말쿠트.</td><td>@KR_BlueArchive</td><td>2026-05-16 12:00</td><td>35,000</td><td>2</td><td>293</td><td>909</td><td>124</td></tr>
 <tr><td>명조</td><td>공명자 전투 모션 - 데니아</td><td>@WW_KR_Official</td><td>2026-05-17 12:00</td><td>66,000</td><td>1</td><td>312</td><td>669</td><td>36</td></tr>
 <tr><td>니케</td><td>BE MY STAR Stage Full Ver.</td><td>@NIKKE_kr</td><td>2026-05-04 12:00</td><td>24,000</td><td>2</td><td>178</td><td>685</td><td>73</td></tr>
 </tbody></table></div>
 <h3>5.9 YouTube-X 비교</h3>
-<div class="table-wrap"><table><thead><tr><th>타이틀</th><th>YouTube 조회수</th><th>X view/reach</th><th>X/YouTube 비율</th><th>X 참여 합계</th><th>X 참여율</th></tr></thead><tbody>
+<div class="table-wrap cols-6"><table><thead><tr><th>타이틀</th><th>YouTube 조회수</th><th>X view/reach</th><th>X/YouTube 비율</th><th>X 참여 합계</th><th>X 참여율</th></tr></thead><tbody>
 <tr><td>블루 아카이브</td><td>12,143</td><td>35,000</td><td>2.88x</td><td>1,328</td><td>3.79%</td></tr>
 <tr><td>명조</td><td>26,194</td><td>66,000</td><td>2.52x</td><td>1,018</td><td>1.54%</td></tr>
 <tr><td>니케</td><td>96,607</td><td>24,000</td><td>0.25x</td><td>938</td><td>3.91%</td></tr>
 </tbody></table></div>
 <h3>5.10 해석</h3>
-<div class="table-wrap"><table><thead><tr><th>관찰</th><th>판단</th></tr></thead><tbody>
+<div class="table-wrap cols-2 compact-table"><table><thead><tr><th>관찰</th><th>판단</th></tr></thead><tbody>
 <tr><td>블루 아카이브 8건 중 7건은 X view가 YouTube 조회수보다 큼</td><td>X는 서브컬처 공식 영상의 보조 링크 채널이 아니라 독립 reach 채널로 작동 가능</td></tr>
 <tr><td>레이사 매지컬은 X/YT 32.04x로 가장 큼</td><td>캐릭터 중심 세로 네이티브 영상은 X에서 YouTube 대비 압도적으로 튈 수 있음</td></tr>
 <tr><td>유형별 평균은 세로 직접 업로드 8.93x, 가로 링크형 2.42x</td><td>YouTube 조회수 기준 X reach 환산 시 유형별 계수를 분리해야 함</td></tr>
@@ -512,14 +543,14 @@ a { color: var(--accent); }
 <tr><td>quote 수와 link click은 캡처상 미확인</td><td>관리자 지표 또는 추가 캡처가 있으면 투자 판단 정확도 상승</td></tr>
 </tbody></table></div>
 <h2>6. 커뮤니티 확산 증거</h2>
-<div class="table-wrap"><table><thead><tr><th>타이틀</th><th>커뮤니티 증거</th><th>규모/반응</th><th>의미</th></tr></thead><tbody>
+<div class="table-wrap cols-4"><table><thead><tr><th>타이틀</th><th>커뮤니티 증거</th><th>규모/반응</th><th>의미</th></tr></thead><tbody>
 <tr><td>블루 아카이브</td><td>아카라이브에 공식 Twitter/X 디지털 굿즈 인증샷 이벤트 공유</td><td>채널 111,649명, 게시글 조회 1,110, 댓글 1</td><td>X 이벤트가 팬덤 커뮤니티로 재배포됨</td></tr>
 <tr><td>명조</td><td>아카라이브에 글로벌·개발팀·한국·일본 공식 X 계정 일람 정리</td><td>채널 65,292명, 게시글 조회 1,317, 댓글 9</td><td>X가 공식 정보 추적 인프라로 인식됨</td></tr>
 <tr><td>니케</td><td>아카라이브에 X 로그인 관련 공식 안내 공유</td><td>채널 76,903명, 게시글 조회 2,331, 댓글 9</td><td>X가 마케팅뿐 아니라 서비스 공지 접점으로도 작동</td></tr>
 </tbody></table></div>
 <h2>7. 투자 판단 대시보드</h2>
 <section class="chart-card" aria-label="X 투자 판단 대시보드"><div class="chart-head"><h3>X 투자 판단 대시보드</h3><p>v0.6 네이티브 영상 실측 반영 후 정성 평가</p></div><div class="score-grid"><div class="score-item caution"><span>대중 도달</span><div class="score-track"><i style="width:35%"></i></div><b>35</b></div><div class="score-item good"><span>코어 팬덤 적합성</span><div class="score-track"><i style="width:82%"></i></div><b>82</b></div><div class="score-item caution"><span>영상 소비 플랫폼성</span><div class="score-track"><i style="width:42%"></i></div><b>42</b></div><div class="score-item mid"><span>실증 데이터 충분성</span><div class="score-track"><i style="width:58%"></i></div><b>58</b></div><div class="score-item good"><span>즉시 실행 가능성</span><div class="score-track"><i style="width:78%"></i></div><b>78</b></div></div></section>
-<div class="table-wrap"><table><thead><tr><th>항목</th><th>현재 점수</th><th>근거</th><th>코멘트</th></tr></thead><tbody>
+<div class="table-wrap cols-4"><table><thead><tr><th>항목</th><th>현재 점수</th><th>근거</th><th>코멘트</th></tr></thead><tbody>
 <tr><td>대중 도달</td><td>낮음</td><td>X 광고 도달 1,000만 전후, Gallup 월간 4%</td><td>YouTube 대체 불가</td></tr>
 <tr><td>코어 팬덤 적합성</td><td>높음</td><td>공식 정보, 팬아트, 실시간 반응, 커뮤니티 인용</td><td>서브컬처 운영 채널로 필요</td></tr>
 <tr><td>영상 소비 플랫폼성</td><td>낮음~중간</td><td>YouTube가 조회·검색·추천 본진</td><td>X에는 컷다운/이미지/스레드 최적화</td></tr>
@@ -527,7 +558,7 @@ a { color: var(--accent); }
 <tr><td>즉시 실행 가능성</td><td>높음</td><td>운영 체계·소재 제작은 바로 설계 가능</td><td>유료비보다 운영/소재 우선</td></tr>
 </tbody></table></div>
 <h2>8. 운영 권장안</h2>
-<div class="table-wrap"><table><thead><tr><th>영역</th><th>권장</th></tr></thead><tbody>
+<div class="table-wrap cols-2 compact-table"><table><thead><tr><th>영역</th><th>권장</th></tr></thead><tbody>
 <tr><td>기본 운영</td><td>YouTube 링크 공지만 올리지 말고 X 네이티브 세로 숏폼, 이미지, 요약 카드, 해시태그를 기본 세트화</td></tr>
 <tr><td>캠페인 운영</td><td>출시·업데이트·콜라보·신규 캐릭터 공개 전후 24~72시간 집중 운영</td></tr>
 <tr><td>소재 제작</td><td>YouTube 본편 제작 시 6초/15초/20초 세로 X 직접 업로드본을 동시에 산출</td></tr>
@@ -536,7 +567,7 @@ a { color: var(--accent); }
 <tr><td>리포팅</td><td>YouTube 링크형과 X 직접 업로드형을 분리하고, YouTube/X/커뮤니티를 한 캠페인 단위로 묶어 비교</td></tr>
 </tbody></table></div>
 <h2>9. 추가 조사 체크리스트</h2>
-<div class="table-wrap"><table><thead><tr><th>우선순위</th><th>항목</th><th>필요성</th></tr></thead><tbody>
+<div class="table-wrap cols-3 compact-table"><table><thead><tr><th>우선순위</th><th>항목</th><th>필요성</th></tr></thead><tbody>
 <tr><td>1</td><td>quote 수와 게시물 URL 원문 추가 확보</td><td>공개 캡처에서 quote 수는 미확인</td></tr>
 <tr><td>1</td><td>X 관리자 impression/link click/UTM 확보</td><td>reach와 전환 기여도 비교</td></tr>
 <tr><td>1</td><td>링크형 게시물의 link click, detail expand, profile click 확보</td><td>X view가 실제 YouTube 유입으로 이어졌는지 검증</td></tr>
@@ -547,7 +578,7 @@ a { color: var(--accent); }
 <tr><td>3</td><td>UTM/link click 또는 관리자 impression 확보</td><td>유료 집행 판단 근거</td></tr>
 </tbody></table></div>
 <h2>10. 결론</h2>
-<div class="table-wrap"><table><thead><tr><th>최종 판단</th><th>내용</th></tr></thead><tbody>
+<div class="table-wrap cols-2 compact-table"><table><thead><tr><th>최종 판단</th><th>내용</th></tr></thead><tbody>
 <tr><td>X의 위치</td><td>대중 영상 플랫폼이 아니라 코어 팬덤 숏폼 증폭 레이어</td></tr>
 <tr><td>YouTube의 위치</td><td>공식 영상 허브와 장기 검색·추천 본진</td></tr>
 <tr><td>커뮤니티의 위치</td><td>X/YouTube 소재가 팬덤 담론으로 바뀌는지 확인하는 검증 레이어</td></tr>
