@@ -95,21 +95,143 @@ th {
 }
 td:nth-child(n+3):not(:last-child) { white-space: nowrap; }
 tbody tr:nth-child(even) td { background: #fbfcfe; }
-figure {
+.chart-card {
   margin: 18px 0 24px;
   padding: 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fbfcfe;
 }
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto;
-  border: 1px solid var(--line-soft);
+.chart-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
 }
+.chart-head h3 {
+  margin: 0;
+  font-size: 17px;
+}
+.chart-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.trend-chart, .bar-chart, .score-grid {
+  display: grid;
+  gap: 10px;
+}
+.trend-row, .bar-row, .score-item {
+  display: grid;
+  grid-template-columns: 72px minmax(180px, 1fr) 88px 110px;
+  align-items: center;
+  gap: 12px;
+}
+.trend-year, .bar-row b, .score-item span {
+  font-weight: 700;
+  color: #243043;
+}
+.trend-track, .bar-track, .score-track {
+  height: 16px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e7ebf1;
+}
+.trend-track span, .bar-track span, .score-track i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+.trend-track span {
+  background: linear-gradient(90deg, #1f6feb, #54a3ff);
+}
+.trend-value, .bar-row em, .score-item b {
+  font-style: normal;
+  font-weight: 800;
+  text-align: right;
+}
+.trend-value small {
+  display: block;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 11px;
+}
+.trend-chip {
+  justify-self: start;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #fff1f2;
+  color: #be123c;
+  font-size: 12px;
+  font-weight: 700;
+}
+.trend-chip.muted {
+  background: #edf0f5;
+  color: #667085;
+}
+.role-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.role-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+.role-card strong {
+  display: block;
+  font-size: 18px;
+}
+.role-card span {
+  display: block;
+  margin-top: 8px;
+  font-weight: 800;
+}
+.role-card small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+.role-card.primary { border-top: 4px solid #1f6feb; }
+.role-card.accent { border-top: 4px solid #16a34a; }
+.role-card.support { border-top: 4px solid #f59e0b; }
+.bar-row {
+  grid-template-columns: 130px minmax(180px, 1fr) 90px;
+}
+.score-item {
+  grid-template-columns: 150px minmax(180px, 1fr) 48px;
+}
+.score-item.good i { background: #16a34a; }
+.score-item.mid i { background: #64748b; }
+.score-item.caution i { background: #f59e0b; }
 a { color: var(--accent); }
+@media (max-width: 760px) {
+  .chart-head {
+    display: block;
+  }
+  .chart-head p {
+    margin-top: 4px;
+  }
+  .trend-row {
+    grid-template-columns: 54px minmax(120px, 1fr) 70px;
+  }
+  .trend-chip {
+    grid-column: 2 / 4;
+  }
+  .bar-row, .score-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .bar-row em, .score-item b {
+    text-align: left;
+  }
+  .role-flow {
+    grid-template-columns: 1fr;
+  }
+}
 @media (max-width: 760px) {
   .report-shell {
     width: 100%;
@@ -138,7 +260,37 @@ a { color: var(--accent); }
 <tr><td>v0.5 변경 방향</td><td>장문 서술 축소 유지, X 공식 게시물 캡처 3건의 reach/engagement 수치 반영.</td></tr>
 </tbody></table></div>
 <h2>2. X 한국 이용 추세</h2>
-<figure><img src="assets/x_korea_longitudinal_trend_v0.5.png" alt="한국 X/Twitter 이용 추세"></figure>
+<section class="chart-card" aria-label="한국 X 이용 추세">
+      <div class="chart-head">
+        <h3>한국 X/Twitter 광고 도달 추이</h3>
+        <p>DataReportal 광고 도달 기준. Gallup 연간 이용률은 보조 지표로 병기.</p>
+      </div>
+      <div class="trend-chart">
+        <div class="trend-row">
+          <div class="trend-year">2022</div>
+          <div class="trend-track"><span style="width:69%"></span></div>
+          <div class="trend-value">7.2M<small>14.0%</small></div>
+          <span class="trend-chip">Gallup 15%</span>
+        </div>
+        <div class="trend-row">
+          <div class="trend-year">2023</div>
+          <div class="trend-track"><span style="width:94%"></span></div>
+          <div class="trend-value">9.8M<small>18.9%</small></div>
+          <span class="trend-chip">Gallup 15%</span>
+        </div>
+        <div class="trend-row">
+          <div class="trend-year">2024</div>
+          <div class="trend-track"><span style="width:100%"></span></div>
+          <div class="trend-value">10.4M<small>20.1%</small></div>
+          <span class="trend-chip muted">Gallup n/a</span>
+        </div>
+        <div class="trend-row">
+          <div class="trend-year">2025</div>
+          <div class="trend-track"><span style="width:96%"></span></div>
+          <div class="trend-value">10.0M<small>19.4%</small></div>
+          <span class="trend-chip">Gallup 14%</span>
+        </div></div>
+    </section>
 <h3>2.1 DataReportal 기준 X 광고 도달 추이</h3>
 <div class="table-wrap"><table><thead><tr><th>연도</th><th>플랫폼 표기</th><th>한국 X/Twitter 광고 도달</th><th>인구 대비</th><th>전년 대비</th><th>해석</th></tr></thead><tbody>
 <tr><td>2022</td><td>Twitter</td><td>720만</td><td>14.0%</td><td>-</td><td>낮은 대중 침투율</td></tr>
@@ -160,7 +312,7 @@ a { color: var(--accent); }
 <tr><td>서브컬처 팬덤은 평균 이용자보다 발화·창작·인용 밀도가 중요</td><td>전체 침투율보다 코어 팬덤 내 역할을 봐야 함</td></tr>
 </tbody></table></div>
 <h2>3. 플랫폼 역할 매트릭스</h2>
-<figure><img src="assets/subculture_channel_role_model_v0.5.png" alt="서브컬처 마케팅 채널 역할 모델"></figure>
+<section class="chart-card role-flow" aria-label="채널 역할 모델"><div class="role-card primary"><strong>YouTube</strong><span>영상 허브</span><small>검색·추천·장기 조회</small></div><div class="role-card accent"><strong>X</strong><span>팬덤 증폭</span><small>초기 반응·repost·quote</small></div><div class="role-card support"><strong>커뮤니티</strong><span>확산 검증</span><small>게시글·댓글·인기글</small></div></section>
 <div class="table-wrap"><table><thead><tr><th>역할</th><th>YouTube</th><th>X</th><th>커뮤니티</th></tr></thead><tbody>
 <tr><td>공식 영상 보관</td><td>높음</td><td>낮음</td><td>낮음</td></tr>
 <tr><td>검색·추천 누적</td><td>높음</td><td>낮음~중간</td><td>중간</td></tr>
@@ -170,7 +322,7 @@ a { color: var(--accent); }
 <tr><td>장기 KPI</td><td>조회수, 시청 지속 시간, 검색 유입</td><td>repost, quote, reply, link click</td><td>게시글 수, 조회수, 댓글, 인기글</td></tr>
 </tbody></table></div>
 <h2>4. 3개 타이틀 YouTube 표본</h2>
-<figure><img src="assets/youtube_recent_case_bars_v0.5.png" alt="공식 YouTube 최근 영상 표본 비교"></figure>
+<section class="chart-card" aria-label="공식 YouTube 최근 영상 표본 비교"><div class="chart-head"><h3>최근 8개 영상 평균 조회수</h3><p>공식 KR YouTube 채널 표본 기준</p></div><div class="bar-chart"><div class="bar-row"><b>블루 아카이브</b><div class="bar-track"><span style="width:47%;background:#3b82f6"></span></div><em>17,930</em></div><div class="bar-row"><b>명조</b><div class="bar-track"><span style="width:100%;background:#16a34a"></span></div><em>38,232</em></div><div class="bar-row"><b>니케</b><div class="bar-track"><span style="width:83%;background:#f59e0b"></span></div><em>31,714</em></div></div></section>
 <p>최근 8개 공식 KR YouTube 영상 표본 기준이다. 표본 크기가 작으므로 채널 전체 성과가 아니라 최근 운영 신호로 해석한다.</p>
 <div class="table-wrap"><table><thead><tr><th>타이틀</th><th>구독자</th><th>평균 조회수</th><th>중앙값</th><th>최고 영상</th><th>최고 조회수</th></tr></thead><tbody>
 <tr><td>블루 아카이브 KR</td><td>237,000</td><td>17,930</td><td>13,958</td><td>붉은겨울 OST 리믹스 앨범 플레이리스트</td><td>35,989</td></tr>
@@ -211,7 +363,7 @@ a { color: var(--accent); }
 <tr><td>니케</td><td>아카라이브에 X 로그인 관련 공식 안내 공유</td><td>채널 76,903명, 게시글 조회 2,331, 댓글 9</td><td>X가 마케팅뿐 아니라 서비스 공지 접점으로도 작동</td></tr>
 </tbody></table></div>
 <h2>7. 투자 판단 대시보드</h2>
-<figure><img src="assets/x_investment_dashboard_v0.5.png" alt="X 투자 판단 대시보드"></figure>
+<section class="chart-card" aria-label="X 투자 판단 대시보드"><div class="chart-head"><h3>X 투자 판단 대시보드</h3><p>v0.5 실측 캡처 반영 후 정성 평가</p></div><div class="score-grid"><div class="score-item caution"><span>대중 도달</span><div class="score-track"><i style="width:35%"></i></div><b>35</b></div><div class="score-item good"><span>코어 팬덤 적합성</span><div class="score-track"><i style="width:82%"></i></div><b>82</b></div><div class="score-item caution"><span>영상 소비 플랫폼성</span><div class="score-track"><i style="width:42%"></i></div><b>42</b></div><div class="score-item mid"><span>실증 데이터 충분성</span><div class="score-track"><i style="width:58%"></i></div><b>58</b></div><div class="score-item good"><span>즉시 실행 가능성</span><div class="score-track"><i style="width:78%"></i></div><b>78</b></div></div></section>
 <div class="table-wrap"><table><thead><tr><th>항목</th><th>현재 점수</th><th>근거</th><th>코멘트</th></tr></thead><tbody>
 <tr><td>대중 도달</td><td>낮음</td><td>X 광고 도달 1,000만 전후, Gallup 월간 4%</td><td>YouTube 대체 불가</td></tr>
 <tr><td>코어 팬덤 적합성</td><td>높음</td><td>공식 정보, 팬아트, 실시간 반응, 커뮤니티 인용</td><td>서브컬처 운영 채널로 필요</td></tr>
