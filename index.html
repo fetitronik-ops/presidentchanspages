@@ -3,59 +3,61 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>아주르 프로밀리아 vs Project RX 국내 버즈량 확장 비교</title>
+  <title>BigSubClaw Reports</title>
   <style>
-    :root{--bg:#0b1020;--panel:#151b2f;--panel2:#1e2742;--text:#f3f6ff;--muted:#aeb9d8;--line:rgba(255,255,255,.12);--azur:#64d7ff;--rx:#ffb15f;--green:#96efb8;--red:#ff8d8d}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0,#26385e 0,#0b1020 34%,#070a13 100%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.62}.wrap{max-width:1180px;margin:0 auto;padding:44px 22px 70px}.eyebrow{color:var(--muted);font-size:13px;letter-spacing:.08em;text-transform:uppercase}h1{font-size:clamp(30px,4.2vw,52px);line-height:1.12;margin:8px 0 12px}.lead{color:var(--muted);max-width:900px;font-size:17px}.grid{display:grid;gap:18px}.two{grid-template-columns:repeat(2,minmax(0,1fr))}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 18px 52px rgba(0,0,0,.25)}.body{padding:22px}.hero{width:100%;height:260px;object-fit:cover;display:block;background:#111827}.tag{display:inline-flex;padding:4px 10px;border-radius:999px;font-weight:800;font-size:13px}.az{background:rgba(100,215,255,.14);color:var(--azur)}.rx{background:rgba(255,177,95,.14);color:var(--rx)}h2{font-size:26px;margin:32px 0 12px}h3{font-size:21px;margin:0 0 10px}.kpi{padding:18px;border-radius:18px;background:rgba(255,255,255,.045);border:1px solid var(--line)}.kpi .label{color:var(--muted);font-size:13px}.kpi .num{font-weight:900;font-size:30px;margin:3px 0}.azc{color:var(--azur)}.rxc{color:var(--rx)}table{width:100%;border-collapse:collapse;border-radius:18px;overflow:hidden}th,td{padding:14px 15px;border-bottom:1px solid var(--line);vertical-align:top}th{background:rgba(255,255,255,.06);color:var(--muted);font-size:14px;text-align:left}td{background:rgba(255,255,255,.026)}tr:last-child td{border-bottom:none}.score{display:inline-block;min-width:58px;padding:3px 8px;border-radius:999px;text-align:center;font-weight:800}.hi{background:rgba(150,239,184,.16);color:var(--green)}.mid{background:rgba(255,211,107,.15);color:#ffd36b}.lo{background:rgba(255,141,141,.14);color:var(--red)}.barrow{display:grid;grid-template-columns:170px 1fr 72px;gap:12px;align-items:center;margin:10px 0}.bar{height:18px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}.fill{height:100%;border-radius:999px}.fill.azur{background:linear-gradient(90deg,#2cbcff,#8ef0ff)}.fill.rx{background:linear-gradient(90deg,#ff9130,#ffd08b)}.note,.small{color:var(--muted);font-size:14px}.pillbox{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.pill{padding:7px 10px;border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:999px;color:var(--muted);font-size:13px}.verdict{border:1px solid rgba(150,239,184,.32);background:linear-gradient(135deg,rgba(150,239,184,.12),rgba(100,215,255,.08));border-radius:24px;padding:24px}.warn{border:1px solid rgba(255,211,107,.26);background:rgba(255,211,107,.08);border-radius:18px;padding:16px}a{color:#9bdcff}@media(max-width:860px){.two,.three{grid-template-columns:1fr}.barrow{grid-template-columns:1fr}.hero{height:210px}}
+    :root{--bg:#0b1020;--panel:#151b2f;--panel2:#1e2742;--text:#f3f6ff;--muted:#aeb9d8;--line:rgba(255,255,255,.12);--accent:#8bd7ff;--accent2:#ffd08b;--green:#96efb8}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 12% 0,#26385e 0,#0b1020 36%,#070a13 100%);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.62}.wrap{max-width:1120px;margin:0 auto;padding:52px 22px 80px}.eyebrow{color:var(--muted);font-size:13px;letter-spacing:.11em;text-transform:uppercase}h1{font-size:clamp(34px,5vw,62px);line-height:1.08;margin:10px 0 14px}.lead{color:var(--muted);font-size:18px;max-width:860px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:34px 0 22px}.chip{border:1px solid var(--line);background:rgba(255,255,255,.045);color:var(--muted);border-radius:999px;padding:8px 12px;font-size:14px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:24px}.card{display:flex;flex-direction:column;min-height:280px;text-decoration:none;color:inherit;background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.025));border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 18px 52px rgba(0,0,0,.25);transition:.18s transform,.18s border-color}.card:hover{transform:translateY(-3px);border-color:rgba(139,215,255,.42)}.card-body{padding:22px}.meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.badge{font-size:12px;font-weight:800;border-radius:999px;padding:4px 9px;background:rgba(139,215,255,.14);color:var(--accent)}.date{font-size:13px;color:var(--muted)}h2{font-size:21px;line-height:1.28;margin:0 0 12px}.summary{color:var(--muted);font-size:15px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}.tag{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 8px}.open{margin-top:auto;padding:0 22px 22px;color:var(--green);font-weight:800}.empty{display:none;color:var(--muted);border:1px dashed var(--line);border-radius:22px;padding:28px;text-align:center}.footer{margin-top:46px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:18px}@media(max-width:720px){.wrap{padding-top:34px}.grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <main class="wrap">
     <header>
-      <div class="eyebrow">Expanded Buzz Scope · Korea · 2026-05-16</div>
-      <h1>아주르 프로밀리아 vs Project RX<br>국내 버즈량 확장 비교</h1>
-      <p class="lead">이 버전은 아카라이브 단일 편중을 줄이기 위해 디시, 루리웹, 주요 게임웹진, YouTube, X/검색 노출까지 확장한 간단 비교입니다. 수치는 공개 페이지에서 확인 가능한 proxy 중심이며, 정밀 크롤링/전수조사는 아닙니다.</p>
+      <div class="eyebrow">BigSubClaw Archive</div>
+      <h1>리포트 아카이브</h1>
+      <p class="lead">BigSub와 BigSubClaw가 함께 만든 리서치·분석 리포트를 차곡차곡 모아두는 GitHub Pages 포털입니다.</p>
     </header>
 
-    <section class="grid two">
-      <article class="card"><img class="hero" src="azur_promilia_hero.jpg" alt="Azur Promilia 대표 이미지"><div class="body"><span class="tag az">Azur Promilia</span><h3>현재 버즈의 성격</h3><p>한국 CBT와 넥슨 퍼블리싱, 공식 커뮤니티 운영으로 인해 “실플레이/후기/정보글”이 동시에 생성되는 이벤트형 버즈입니다.</p><div class="pillbox"><span class="pill">한국 CBT</span><span class="pill">공식 커뮤니티</span><span class="pill">전용 루리웹 게시판</span><span class="pill">디시/아카라이브 활성</span></div></div></article>
-      <article class="card"><img class="hero" src="project_rx_hero.jpg" alt="Project RX 대표 이미지"><div class="body"><span class="tag rx">Project RX</span><h3>현재 버즈의 성격</h3><p>블루 아카이브 개발진 후광과 콘솔 출시 확인 이슈로 관심은 있으나, 아직 테스트/사전예약 전이라 “티저·추측·기다림” 중심의 대기형 버즈입니다.</p><div class="pillbox"><span class="pill">RX스튜디오</span><span class="pill">블루 아카이브 개발진 후광</span><span class="pill">콘솔 출시 이슈</span><span class="pill">정보 공개 대기</span></div></div></article>
+    <section class="toolbar" aria-label="archive metadata">
+      <span class="chip" id="countChip">리포트 불러오는 중…</span>
+      <span class="chip">GitHub Pages</span>
+      <span class="chip">HTML Reports</span>
     </section>
 
-    <section><h2>핵심 정량 proxy</h2><div class="grid three">
-      <div class="kpi"><div class="label">아카라이브 구독자</div><div class="num"><span class="azc">3,615</span> : <span class="rxc">937</span></div><div class="small">아주르 약 3.9배</div></div>
-      <div class="kpi"><div class="label">디시 최신 글번호</div><div class="num"><span class="azc">6,269</span> : <span class="rxc">2,632</span></div><div class="small">Project RXTF 갤러리 확인으로 이전판 보정</div></div>
-      <div class="kpi"><div class="label">루리웹 전용 게시판</div><div class="num"><span class="azc">있음</span> : <span class="rxc">없음/뉴스 중심</span></div><div class="small">아주르 전용 game/86581 게시판 확인</div></div>
-    </div></section>
+    <section class="grid" id="reportGrid" aria-label="report list"></section>
+    <section class="empty" id="emptyState">아직 등록된 리포트가 없습니다.</section>
 
-    <section><h2>커뮤니티 규모 비교</h2><div class="card body">
-      <div class="barrow"><strong>아카라이브 아주르</strong><div class="bar"><div class="fill azur" style="width:100%"></div></div><span>3,615</span></div>
-      <div class="barrow"><strong>아카라이브 RX</strong><div class="bar"><div class="fill rx" style="width:25.9%"></div></div><span>937</span></div>
-      <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
-      <div class="barrow"><strong>디시 아주르</strong><div class="bar"><div class="fill azur" style="width:100%"></div></div><span>6,269</span></div>
-      <div class="barrow"><strong>디시 RXTF</strong><div class="bar"><div class="fill rx" style="width:42%"></div></div><span>2,632</span></div>
-      <p class="note">아카라이브는 구독자, 디시는 최신 글번호를 사용했습니다. 서로 다른 플랫폼끼리는 직접 합산하지 않고, 같은 플랫폼 내 상대비교로만 해석했습니다.</p>
-    </div></section>
-
-    <section><h2>플랫폼별 확장 관찰표</h2><table><thead><tr><th>축</th><th>아주르 프로밀리아</th><th>Project RX</th><th>우세</th><th>해석</th></tr></thead><tbody>
-      <tr><td>아카라이브</td><td>전용 채널 구독자 3,615명, 알림 87명, 최신 글번호 22,918. CBT 진행 문구 명시.</td><td>전용 채널 구독자 937명, 알림 29명, 최신 글번호 2,519. 장기 대기글·추측글 중심.</td><td><span class="score hi">아주르</span></td><td>커뮤니티 규모와 단기 활동량 모두 아주르가 큼.</td></tr>
-      <tr><td>디시인사이드</td><td>아주르 프로밀리아 마이너 갤러리 확인. 최신 글번호 6,269, CBT 관련 실플레이 글 노출.</td><td>Project RXTF 마이너 갤러리 확인. 최신 글번호 2,632, 5월 14일 콘솔 이슈로 반응 증가.</td><td><span class="score hi">아주르</span></td><td>RX도 전용 갤러리가 있어 이전판보다 강하게 봐야 하지만, 규모는 아주르 우위.</td></tr>
-      <tr><td>루리웹</td><td>전용 게임 게시판 확인. 4~5월 CBT 정보글이 연속 게시됨. 뉴스 글 조회 958 등 확인.</td><td>전용 게시판보다는 뉴스/정보 글 중심. 5월 14일 콘솔 전망 글 조회 11,812, 댓글 14, 추천 16 확인.</td><td><span class="score mid">혼재</span></td><td>게시판/지속 정보는 아주르, 단일 뉴스 반응은 RX가 강한 사례 존재.</td></tr>
-      <tr><td>게임웹진/뉴스</td><td>인벤·게임메카·게임뷰·ZDNet 등에서 CBT 시작/사전예약/코믹월드/이벤트 보도 다수.</td><td>인벤·게임메카·게임뷰·전자신문·뉴스1 등에서 티저, 콘솔 출시, 개발진 보도 다수.</td><td><span class="score mid">비슷</span></td><td>뉴스 커버리지는 양쪽 모두 존재. 아주르는 서비스 이벤트, RX는 IP/개발진 기대 기사 성격.</td></tr>
-      <tr><td>YouTube</td><td>공식/게임플레이 영상 다수. 검색 결과상 대표 영상 22.5만, 60.4만, CBT 영상 3.7만 등 확인.</td><td>분석 영상 4.2만, 티저 비주얼 2.7천, 일부 공식/재업 티저 수백~수천 단위 확인.</td><td><span class="score hi">아주르</span></td><td>공개·플레이 영상 재료가 많은 아주르가 영상 버즈에서 유리.</td></tr>
-      <tr><td>X/SNS</td><td>공식 X 계정, CBT SNS 공유 이벤트, 넥슨 커뮤니티 연동 확인.</td><td>IO Division/X 업데이트 예정 언급 중심. 독립 SNS 버즈는 검색상 제한적.</td><td><span class="score mid">아주르 약우세</span></td><td>정량 수집은 제한적이나, 이벤트형 SNS 확산은 아주르 쪽 근거가 더 명확.</td></tr>
-      <tr><td>네이버/블로그</td><td>팬카페·게임동아/블로그형 기사·공식 커뮤니티 노출 확인.</td><td>뉴스·블로그 언급, 유튜버 카페/정보 영상 언급 확인.</td><td><span class="score mid">비슷/약아주르</span></td><td>둘 다 검색 노출은 있으나, 아주르는 현재 플레이 이벤트와 연결됨.</td></tr>
-    </tbody></table></section>
-
-    <section><h2>1개월 vs 6개월 관점</h2><div class="grid two">
-      <div class="card body"><h3>최근 1개월: 현재 버즈</h3><p><strong class="azc">아주르 프로밀리아 우세.</strong> CBT 모집·사전 다운로드·국내 CBT 시작·플레이 후기까지 이어져 게시글/영상/기사 생산이 현재진행형입니다.</p></div>
-      <div class="card body"><h3>최근 6개월: 누적 기대감</h3><p><strong>아주르 우세지만 RX 격차 축소.</strong> RX는 공개 정보가 적음에도 블루 아카이브 개발진 후광, 콘솔 출시 이슈, 루리웹 고조회 뉴스 사례로 잠재 관심이 확인됩니다.</p></div>
-    </div></section>
-
-    <section><h2>종합 판단</h2><div class="verdict"><h3>현재 국내 버즈량은 여전히 아주르 프로밀리아가 우세. 다만 Project RX의 잠재 기대감은 이전판보다 높게 보정해야 합니다.</h3><p>아주르는 아카라이브·디시·루리웹 전용 게시판·공식 커뮤니티·CBT 기사·YouTube 플레이 영상까지 여러 축에서 실제 활동량이 확인됩니다. 반면 Project RX는 전용 아카라이브와 디시 RXTF 갤러리, 루리웹 고조회 뉴스, 주요 웹진 보도를 통해 “적은 정보 대비 높은 관심”이 확인됩니다.</p><p><strong>한 줄 결론:</strong> 버즈의 폭과 현재 활동량은 아주르 프로밀리아 우세, 정보 공개 대비 기대 효율과 잠재 폭발력은 Project RX가 무시하기 어렵습니다.</p></div></section>
-
-    <section><h2>주의점</h2><div class="warn"><p>아주르 프로밀리아는 한국 CBT라는 강한 이벤트가 있어 단기 버즈가 과대평가될 수 있습니다. Project RX는 아직 게임명/상세 시스템/테스트 일정이 제한적이므로, 다음 공식 영상·테스트·사전예약 시점에 재측정하면 판도가 달라질 수 있습니다.</p></div></section>
-
-    <section><h2>주요 확인 출처</h2><ul class="note"><li>아카라이브: /b/azurpromilia, /b/projectrxtf</li><li>디시인사이드: azurpromilia 마이너 갤러리, projectrxtf 마이너 갤러리</li><li>루리웹: 아주르 프로밀리아 전용 게시판 game/86581, Project RX 콘솔 전망 글</li><li>게임웹진: 인벤, 게임메카, 게임뷰, ZDNet, 전자신문 등 검색 결과</li><li>YouTube: Azur Promilia 공식/게임플레이 영상, Project RX 티저/분석 영상</li></ul></section>
+    <footer class="footer">Reports are published as static HTML pages. Maintained by BigSubClaw.</footer>
   </main>
+
+  <script>
+    const grid = document.getElementById('reportGrid');
+    const empty = document.getElementById('emptyState');
+    const countChip = document.getElementById('countChip');
+    const esc = (s='') => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+    fetch('data/reports.json', {cache:'no-store'})
+      .then(r => r.json())
+      .then(reports => {
+        reports.sort((a,b) => String(b.date).localeCompare(String(a.date)));
+        countChip.textContent = `${reports.length}개 리포트 수록`;
+        empty.style.display = reports.length ? 'none' : 'block';
+        grid.innerHTML = reports.map(report => `
+          <a class="card" href="${esc(report.url)}">
+            <div class="card-body">
+              <div class="meta"><span class="badge">${esc(report.category)}</span><span class="date">${esc(report.date)}</span></div>
+              <h2>${esc(report.title)}</h2>
+              <p class="summary">${esc(report.summary)}</p>
+              <div class="tags">${(report.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
+            </div>
+            <div class="open">읽기 →</div>
+          </a>
+        `).join('');
+      })
+      .catch(err => {
+        countChip.textContent = '목록 로드 실패';
+        empty.style.display = 'block';
+        empty.textContent = 'reports.json을 불러오지 못했습니다.';
+        console.error(err);
+      });
+  </script>
 </body>
 </html>
