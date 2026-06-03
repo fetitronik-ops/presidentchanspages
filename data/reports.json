@@ -1,5 +1,13 @@
 [
   {
+    "slug": "fgo-servant-popularity-japan-eras",
+    "title": "FGO 일본권 시대별 인기 서번트 조사",
+    "date": "2026-06-03",
+    "category": "팬덤 인기 분석",
+    "summary": "패미통 주년 앙케이트, 성배/Lv.100 지표, 스토리·이벤트 선호, 성능 메타를 분리해 2015년 이후 일본권 FGO 인기 서번트를 시대별로 정리한 리포트입니다.",
+    "url": "reports/fgo-servant-popularity-japan-eras/"
+  },
+  {
     "slug": "korean-video-viewing-polarization-2026",
     "title": "한국 영상 시청 시간의 숏폼·슈퍼롱폼 양극화 트렌드",
     "date": "2026-05-29",
