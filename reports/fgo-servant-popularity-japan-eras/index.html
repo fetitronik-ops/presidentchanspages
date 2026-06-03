@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FGO 일본권 시대별 인기 서번트 조사</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #5d6678;
+      --line: #d8deea;
+      --paper: #f7f8fb;
+      --panel: #ffffff;
+      --blue: #2857a8;
+      --red: #a93f48;
+      --gold: #b58022;
+      --green: #2d7356;
+      --violet: #6a4aa0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.62;
+    }
+    header {
+      background: #111827;
+      color: white;
+      padding: 52px 22px 34px;
+      border-bottom: 5px solid #c8a35a;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; }
+    .eyebrow { color: #d8bd7c; font-size: 14px; font-weight: 700; letter-spacing: .02em; }
+    h1 { margin: 10px 0 14px; font-size: clamp(30px, 5vw, 52px); line-height: 1.12; letter-spacing: 0; }
+    .lead { max-width: 860px; color: #d9e0ee; font-size: 18px; margin: 0; }
+    main { padding: 28px 22px 54px; }
+    section { margin: 26px auto; }
+    h2 { font-size: 26px; line-height: 1.25; margin: 0 0 14px; }
+    h3 { font-size: 20px; margin: 0 0 10px; }
+    p { margin: 0 0 12px; }
+    a { color: var(--blue); }
+    .grid { display: grid; gap: 16px; }
+    .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: 0 1px 0 rgba(20, 32, 54, .04);
+    }
+    .metric {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: white;
+      background: var(--blue);
+      margin: 0 6px 6px 0;
+    }
+    .tag.red { background: var(--red); }
+    .tag.gold { background: var(--gold); }
+    .tag.green { background: var(--green); }
+    .tag.violet { background: var(--violet); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 12px 12px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+    }
+    th { background: #eef2f8; font-size: 13px; color: #374151; }
+    tr:last-child td { border-bottom: 0; }
+    .rank { font-weight: 800; white-space: nowrap; }
+    .bar {
+      height: 10px;
+      background: #e7ebf2;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .bar > span { display: block; height: 100%; background: var(--blue); }
+    .note {
+      border-left: 4px solid var(--gold);
+      background: #fffaf0;
+      padding: 14px 16px;
+      border-radius: 0 8px 8px 0;
+      color: #4a3a1d;
+    }
+    .source-list li { margin-bottom: 8px; }
+    .muted { color: var(--muted); }
+    footer { padding: 26px 22px 44px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 780px) {
+      .grid.cols-3, .grid.cols-2 { grid-template-columns: 1fr; }
+      th, td { font-size: 13px; padding: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">Fate/Grand Order · 일본권 팬덤/애정 지표 리뷰</div>
+      <h1>FGO 일본권 시대별 인기 서번트 조사</h1>
+      <p class="lead">2015년 이후 약 5년 단위로 일본 유저층에서 강한 인기를 보인 서번트를 정리했다. 공식 단일 인기투표가 부재하므로 패미통 주년 앙케이트, 레벨100/성배 지표, 스토리·이벤트 선호, 성능 메타, 팬덤 화제성을 분리해 판정했다.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="note">
+      <strong>결론 요약.</strong> 2015-2019 구간의 대표는 잔느 다르크〔얼터〕가 가장 강하다. 길가메시, 스카사하, 오키타 소지, 에레쉬키갈이 뒤를 받친다. 2020-2024 구간은 캐스트리아가 성능·소유욕 지표의 중심이고, 2부 6장 이후 캐릭터 팬덤 대표성은 오베론과 모르간이 강하다. 2024 단년 신규 서번트 애정 지표에서는 스페이스 에레쉬키갈과 수영복 C.I.E.L이 상위에 섰다.
+    </section>
+
+    <section>
+      <h2>판정 방법</h2>
+      <div class="grid cols-3">
+        <article class="card">
+          <h3>애정 지표</h3>
+          <p>성배/Lv.100 투입, 신규 의상 희망, 보구 연출 선호처럼 유저가 캐릭터에 자원을 쓰거나 “보고 싶다”고 말한 항목을 우선했다.</p>
+          <div class="metric"><span>대표 출처</span><strong>패미통 주년 앙케이트</strong></div>
+        </article>
+        <article class="card">
+          <h3>성능·소유욕 지표</h3>
+          <p>“지금 가장 갖고 싶은 서번트”와 메타 핵심 서포터의 픽업 수요는 캐릭터 인기와 성능 수요가 섞이므로 별도 축으로 해석했다.</p>
+          <div class="metric"><span>대표 후보</span><strong>캐스트리아, 멀린, 스카디</strong></div>
+        </article>
+        <article class="card">
+          <h3>서사·팬덤 지표</h3>
+          <p>좋아하는 메인퀘스트·이벤트 순위와 해당 장의 핵심 캐릭터 반응을 연결했다. 2부 6장은 완결 이후 오베론·모르간 평가가 커졌다.</p>
+          <div class="metric"><span>핵심 구간</span><strong>1부 7장, CCC, 2부 6장</strong></div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>시대별 대표 서번트</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>구간</th>
+            <th>대표 판정</th>
+            <th>상위 후보군</th>
+            <th>판정 근거</th>
+            <th>확실도</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="rank">2015-2019</td>
+            <td><strong>잔느 다르크〔얼터〕</strong></td>
+            <td>길가메시, 스카사하, 오키타 소지, 에레쉬키갈, 암굴왕, 멜트릴리스</td>
+            <td>패미통 4주년 공개 결과에서 “레벨100에 한 서번트 TOP10” 1위가 잔느 얼터(436표), 2위 길가메시(372표), 3위 암굴왕(254표). 신규 의상 희망은 오키타 1위, 에레쉬키갈 3위. 1부 후반과 CCC/수영복 이벤트 선호가 캐릭터 팬덤을 보강했다.</td>
+            <td>높음</td>
+          </tr>
+          <tr>
+            <td class="rank">2020-2024</td>
+            <td><strong>알트리아 캐스터 / 오베론 / 모르간</strong></td>
+            <td>아르주나〔얼터〕, 멀린, 센지 무라마사, 도만, 스카디, 반 고흐, 멜뤼진, 코얀스카야</td>
+            <td>패미통 6주년 결과에서 “지금 가장 갖고 싶은 서번트” 1위가 알트리아 캐스터(376표), 5위가 모르간(234표). 같은 조사에서 2부 6장 전반만 열린 상태에서도 아발론 르 페가 메인퀘스트 5위와 애니화 희망 4위에 진입했다. 완결 이후에는 오베론·모르간이 2부6장 팬덤의 대표축으로 해석된다.</td>
+            <td>중상</td>
+          </tr>
+          <tr>
+            <td class="rank">2025 전후 최신</td>
+            <td><strong>스페이스 에레쉬키갈</strong></td>
+            <td>수영복 C.I.E.L, 아오자키 아오코, 판타즈문, 로우히, 야마토타케루</td>
+            <td>패미통/칼데아 사테라이트 스테이션 2024-2025 공개 자료에서 “2024년 등장 서번트 중 가장 많이 Lv.100에 된 순위” 1위가 스페이스 에레쉬키갈, 2위가 수영복 C.I.E.L. 단년 신규 서번트 기준이므로 전체 누적 인기와는 분리해야 한다.</td>
+            <td>중간</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>핵심 후보별 근거</h2>
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>잔느 다르크〔얼터〕</h3>
+          <span class="tag red">2015-2019 대표</span><span class="tag gold">성배/Lv100 1위</span>
+          <p>4주년 패미통 앙케이트에서 레벨100에 한 서번트 전체 1위. 어벤저 클래스 선호, 신주쿠 영의 선호, 강한 공격 성능까지 겹친 초기~중기 FGO의 대표적 “애정+성능” 캐릭터다.</p>
+          <div class="bar"><span style="width: 92%"></span></div>
+        </article>
+        <article class="card">
+          <h3>길가메시</h3>
+          <span class="tag gold">성배/Lv100 2위</span><span class="tag violet">Fate 원전 팬덤</span>
+          <p>4주년 레벨100 2위. FGO 고유 캐릭터라기보다 Fate 전체 IP의 장기 인기와 고성능 아처 이미지가 함께 작동한 케이스다.</p>
+          <div class="bar"><span style="width: 82%"></span></div>
+        </article>
+        <article class="card">
+          <h3>알트리아 캐스터</h3>
+          <span class="tag green">메타 핵심</span><span class="tag">소유욕 1위</span>
+          <p>6주년 기준 “지금 가장 갖고 싶은 서번트” 1위. Arts 시스템 메타를 바꾼 성능 지배력이 크지만, 2부6장 전반 이후 캐릭터 호감도도 함께 상승했다.</p>
+          <div class="bar"><span style="width: 88%"></span></div>
+        </article>
+        <article class="card">
+          <h3>오베론</h3>
+          <span class="tag violet">2부6장 팬덤</span><span class="tag green">메타 서포터</span>
+          <p>패미통 6주년 공개 시점에는 아직 2부6장 후반이 열리지 않아 직접 수치가 충분하지 않다. 그러나 2부6장 완결 이후 서사 반응과 성능 양쪽에서 후기 FGO 대표 남성 서번트로 보는 것이 타당하다.</p>
+          <div class="bar"><span style="width: 78%"></span></div>
+        </article>
+        <article class="card">
+          <h3>모르간</h3>
+          <span class="tag violet">2부6장 팬덤</span><span class="tag">소유욕 5위</span>
+          <p>6주년 “지금 가장 갖고 싶은 서번트” 5위. 전반 공개 시점에도 상위권이었고, 완결 이후에는 요정국 서사의 중심 캐릭터로 여성/남성 팬덤 모두에서 존재감이 커졌다.</p>
+          <div class="bar"><span style="width: 80%"></span></div>
+        </article>
+        <article class="card">
+          <h3>스페이스 에레쉬키갈</h3>
+          <span class="tag red">2024 신규 1위</span><span class="tag gold">Lv100</span>
+          <p>2024년 등장 서번트 한정 Lv.100 순위 1위. 기존 에레쉬키갈 팬덤의 장기 축적과 신버전 출시 효과가 결합한 최신 애정 지표다.</p>
+          <div class="bar"><span style="width: 74%"></span></div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>주의해서 읽어야 할 점</h2>
+      <table>
+        <thead>
+          <tr><th>이슈</th><th>해석</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>공식 전체 인기투표 부재</td><td>FGO는 정기적인 “전체 서번트 인기투표”가 아니라 주년 앙케이트의 항목별 결과가 공개되는 구조다. 따라서 대표 캐릭터 판정은 복수 지표의 합성이다.</td></tr>
+          <tr><td>성능과 캐릭터 인기의 혼합</td><td>캐스트리아, 멀린, 스카디, 오베론은 성능 수요가 매우 커서 순수 캐릭터 애정과 분리해야 한다. 반대로 잔느 얼터, 에레쉬키갈, 모르간은 애정 지표 해석 비중이 높다.</td></tr>
+          <tr><td>2부6장 데이터의 시점 문제</td><td>패미통 6주년 공개 결과는 2021년 6월 19-26일 집계로 2부6장 전반까지만 반영했다. 오베론과 모르간의 최종 팬덤 평가는 완결 후 반응을 정성적으로 보강해야 한다.</td></tr>
+          <tr><td>2024 신규 랭킹의 범위</td><td>스페이스 에레쉬키갈 1위는 “2024년 등장 서번트” 한정 Lv.100 지표다. 누적 전체 인기 1위라는 뜻은 아니다.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>근거 자료</h2>
+      <ul class="source-list">
+        <li><a href="https://www.famitsu.com/news/202006/20200591.html">패미통: FGO 4주년 앙케이트 공개</a> — 유효응답 9356명, 레벨100 서번트 TOP10, 신규 의상 희망, 보구 연출 선호 등.</li>
+        <li><a href="https://www.famitsu.com/news/202207/02223016.html">패미통: FGO 6주년 앙케이트 공개</a> — 유효응답 9052명, 좋아하는 메인퀘스트, 지금 가장 갖고 싶은 서번트, 2부6장 전반 시점 주석.</li>
+        <li><a href="https://app.famitsu.com/20240212_2194809/">패미통App: 칼데아 사테라이트 스테이션 2023-2024 리포트</a> — Lv.100 랭킹 공개 언급과 행사 맥락.</li>
+        <li><a href="https://www.famitsu.com/article/202502/33083">패미통: 2024년 등장 서번트 Lv.100 랭킹</a> — 스페이스 에레쉬키갈, 수영복 C.I.E.L, 아오자키 아오코 등.</li>
+        <li><a href="https://www.famitsu.com/article/202407/10441">패미통: FGO 9주년 앙케이트 실시 공지</a> — 주년 특집에서 마스터 앙케이트가 지속 운영되는 방식 확인.</li>
+      </ul>
+      <p class="muted">작성일: 2026-06-03. 본 보고서는 공개 웹 자료와 패미통 주년 앙케이트 공개분을 기반으로 한 해석 보고서이며, 비공개 잡지 전문 및 실시간 SNS 원자료는 추가 조사 시 보강 가능하다.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">BigSubClaw report · FGO servant popularity by era · Japan-focused evidence review</div>
+  </footer>
+</body>
+</html>
