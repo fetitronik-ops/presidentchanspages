@@ -239,6 +239,28 @@
       margin: 12px 0;
       font-weight: 700;
     }
+    .application-shot {
+      background:
+        repeating-linear-gradient(135deg, rgba(17,18,20,.06) 0 2px, transparent 2px 12px),
+        #f7f7f2;
+      border: 2px solid var(--charcoal);
+      box-shadow: 10px 10px 0 var(--accent);
+    }
+    .application-shot img {
+      max-height: 820px;
+      object-fit: contain;
+      background: #000;
+    }
+    .copy-table th:nth-child(1) { width: 18%; }
+    .copy-table th:nth-child(2) { width: 50%; }
+    .copy-table th:nth-child(3) { width: 32%; }
+    .copy-cell {
+      white-space: normal;
+      line-height: 1.72;
+    }
+    .copy-cell strong {
+      color: var(--charcoal);
+    }
     footer {
       padding: 28px 72px 34px;
       color: #f8f0c8;
@@ -472,6 +494,35 @@
             <tr><td>밈 리액션</td><td>오류: 귀여운 반응이 과다 감지되었습니다. 웃음 모듈을 실행합니다...</td></tr>
             <tr><td>FAQ</td><td>도움말 마법사를 시작합니다. 먼저 가장 많이 묻는 질문 3개를 표시합니다.</td></tr>
             <tr><td>종료 포스트</td><td>마법사를 종료합니다. 참여해 주셔서 감사합니다.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>9. 적용 예시</h2>
+        <p>기존 공식 X 오픈 인사 포스트를 제안서의 뉴트로 도움말 페르소나 문법으로 재해석하면, 단순한 계정 소개보다 “도움말 마법사가 처음 실행되며 말을 거는” 감각을 만들 수 있다.</p>
+        <figure class="application-shot">
+          <img src="assets/project_rx_open_post.jpg" alt="프로젝트 RX 공식 X 오픈 인사 포스팅 화면">
+          <figcaption>원본 포스트: 공식 X 계정 오픈 인사. 아래 카피안은 같은 정보를 유지하면서 도움말 프로그램식 말투로 변환한 예시다.</figcaption>
+        </figure>
+        <table class="copy-table">
+          <thead><tr><th>안</th><th>재해석 문구</th><th>활용 포인트</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>1안<br>균형형</td>
+              <td class="copy-cell"><strong>[공식 X 계정이 실행되었습니다!]</strong><br><br>안녕하세요.<br>'프로젝트 RX'의 공식 X 도움말입니다.<br><br>처음 방문하신 것 같군요.<br>새로운 소식, 안내 사항, 이벤트 정보를 이곳에 표시할 예정입니다.<br><br>멋진 하루입니다!<br>앞으로의 업데이트를 확인하시려면 팔로우를 선택하십시오.<br><br>#project_rx #프로젝트RX</td>
+              <td>공식성은 유지하면서 `처음 방문하신 것 같군요`, `표시할 예정입니다`, `선택하십시오`로 초기 도움말 프로그램의 말투를 가장 안정적으로 살린다.</td>
+            </tr>
+            <tr>
+              <td>2안<br>마법사형</td>
+              <td class="copy-cell"><strong>[프로젝트 RX 공식 X 마법사 시작]</strong><br><br>환영합니다!<br>'프로젝트 RX'의 공식 X 계정입니다.<br><br>이 계정에서는 앞으로 다양한 소식을 안내해 드립니다.<br>새 공지, 이벤트, 업데이트 정보가 준비되면 자동으로 표시됩니다.<br><br>계속해서 소식을 받아보시겠습니까?<br>그렇다면 팔로우 버튼을 선택하십시오.<br><br>#project_rx #프로젝트RX</td>
+              <td>`마법사 시작`, `자동으로 표시됩니다`, `계속하시겠습니까?` 구조가 설치/설정 마법사 감각을 강하게 만든다.</td>
+            </tr>
+            <tr>
+              <td>3안<br>억텐형</td>
+              <td class="copy-cell"><strong>[공식 X 오픈 인사!]</strong><br><br>축하합니다!<br>'프로젝트 RX'의 공식 X 계정을 발견하셨습니다.<br><br>처음 방문하신 것 같군요.<br>앞으로 이곳에서 여러 가지 소식과 안내 사항을 확인하실 수 있습니다.<br><br>멋진 하루입니다!<br>새로운 소식이 도착하면 알려드릴 수 있도록 팔로우를 선택하십시오.<br><br>#project_rx #프로젝트RX</td>
+              <td>`축하합니다`, `발견하셨습니다`, `멋진 하루입니다`처럼 TPO보다 명랑함이 앞서는 옛 프로그램식 억텐을 의도적으로 활용한다.</td>
+            </tr>
           </tbody>
         </table>
       </section>
