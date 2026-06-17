@@ -1,5 +1,13 @@
 [
   {
+    "slug": "newtro-assistant-social-persona",
+    "title": "뉴트로 보조형 컴퓨터 프로그램 말투 소셜 페르소나 제안서",
+    "date": "2026-06-17",
+    "category": "소셜 페르소나 전략",
+    "summary": "Clippy, Rover, 초기 Siri, 90~2000년대 한국어 문어체, 어색한 사회성, 억텐 시스템 멘트를 바탕으로 뉴트로 소셜 미디어 페르소나를 설계한 리포트입니다.",
+    "url": "reports/newtro-assistant-social-persona/"
+  },
+  {
     "slug": "fgo-servant-popularity-japan-eras",
     "title": "FGO 일본권 시대별 인기 서번트 조사",
     "date": "2026-06-03",
